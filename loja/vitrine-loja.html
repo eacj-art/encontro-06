@@ -136,7 +136,7 @@ footer .wrap{padding-block:14px;display:flex;justify-content:space-between;gap:1
 </main>
 
 <footer>
-  <div class="wrap"><span>Vitrine · homologação · versão 2.4.0 (build 20/11/2026)</span><span>Loja fictícia para fins didáticos.</span></div>
+  <div class="wrap"><span>Vitrine · homologação · versão 2.4.0 + g4-pr1 (build do PR)</span><span>Loja fictícia para fins didáticos.</span></div>
 </footer>
 
 <script>
@@ -276,9 +276,10 @@ if (typeof module !== "undefined") module.exports = VitrineLogica;
     var r = L.validarCupom($("campo-cupom").value);
     if (!r.ok) { estado.cupom = null; mostrarMensagem(r.mensagem, "erro"); render(); return; }
     var anterior = estado.cupom;
-    if (anterior && anterior !== r.codigo) { mostrarMensagem("Já existe um cupom aplicado. Remova o cupom atual para usar outro.", "erro"); render(); return; }
+    // CA3: um novo cupom válido substitui o anterior (comportamento da versão 2.3.1)
     estado.cupom = r.codigo;
     var txt = "Cupom " + r.codigo + " aplicado: " + L.descricaoCupom(r.codigo) + ".";
+    if (anterior && anterior !== r.codigo) txt += " Ele substituiu o cupom " + anterior + ".";
     mostrarMensagem(txt, "ok");
     $("campo-cupom").value = "";
     render();
