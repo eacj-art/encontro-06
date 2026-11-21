@@ -136,7 +136,7 @@ footer .wrap{padding-block:14px;display:flex;justify-content:space-between;gap:1
 </main>
 
 <footer>
-  <div class="wrap"><span>Vitrine · homologação · versão 2.4.0 (build 20/11/2026)</span><span>Loja fictícia para fins didáticos.</span></div>
+  <div class="wrap"><span>Vitrine · homologação · versão 2.4.0 + g5-pr1 (build do PR)</span><span>Loja fictícia para fins didáticos.</span></div>
 </footer>
 
 <script>
@@ -207,7 +207,8 @@ var VitrineLogica = (function () {
     var c = CUPONS[codigo];
     if (!c) return 0;
     if (c.tipo === "percentual") return arred((produtos + frete) * c.valor / 100);
-    return arred(Math.min(c.valor * (itens || 1), produtos));
+    // R2: o desconto fixo é o valor do cupom, uma vez por pedido
+    return arred(Math.min(c.valor, produtos));
   }
 
   function resumo(carrinho, freteId, cupomCodigo) {
