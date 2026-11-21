@@ -136,7 +136,7 @@ footer .wrap{padding-block:14px;display:flex;justify-content:space-between;gap:1
 </main>
 
 <footer>
-  <div class="wrap"><span>Vitrine · homologação · versão 2.4.0 (build 20/11/2026)</span><span>Loja fictícia para fins didáticos.</span></div>
+  <div class="wrap"><span>Vitrine · homologação · versão 2.4.0 + g4-pr2 (build do PR)</span><span>Loja fictícia para fins didáticos.</span></div>
 </footer>
 
 <script>
@@ -189,9 +189,10 @@ var VitrineLogica = (function () {
   // Valida um código digitado. Retorna { ok, codigo, mensagem }.
   function validarCupom(codigoDigitado, agora) {
     var codigo = String(codigoDigitado || "").trim();
-    if (!/^[A-Za-z0-9]{6,12}$/.test(codigo)) return { ok: false, mensagem: "Cupom inválido" };
+    // R1: mensagens específicas para cada motivo de recusa
+    if (!/^[A-Za-z0-9]{6,12}$/.test(codigo)) return { ok: false, mensagem: "O código do cupom deve ter de 6 a 12 letras ou números." };
     var cupom = CUPONS[codigo];
-    if (!cupom) return { ok: false, mensagem: "Cupom inválido" };
+    if (!cupom) return { ok: false, mensagem: "Cupom não encontrado." };
     if (hojeISO(agora) > cupom.validade) return { ok: false, mensagem: "Cupon expirado" };
     return { ok: true, codigo: codigo };
   }
