@@ -24,6 +24,24 @@ Cada grupo tem **3 PRs próprios**. Os PRs de um grupo são diferentes dos PRs d
 
 Os títulos começam com o número do grupo, por exemplo `[Grupo 3]`. As branches seguem o padrão `g3-pr1`, `g3-pr2` e `g3-pr3`.
 
+## Como revisar cada PR
+
+**PR 1 e PR 2 · só leitura**
+
+Leiam a descrição e a aba **Files changed**. Comparem com a US-01, que está no `guia-revisao-prs.md`. Não precisa baixar nada.
+
+**PR 3 · leitura e teste**
+
+1. Baixem a `main` e a branch do PR 3. O passo a passo está em "Como baixar a loja", abaixo.
+2. Abram `loja/vitrine-loja.html` das duas, lado a lado.
+3. Façam os 5 testes abaixo nas duas lojas e comparem:
+   1. Adicionem 2 unidades de um produto, escolham a entrega Padrão e apliquem BEMVINDO10. Os valores são iguais nas duas lojas?
+   2. Com um cupom aplicado, cliquem em **Esvaziar carrinho** e adicionem um produto. O cupom saiu?
+   3. Apliquem um cupom e cliquem em **Remover cupom**. O desconto saiu da tela?
+   4. Digitem " BEMVINDO10", com um espaço antes. Depois, digitem "bemvindo10".
+   5. Escolham a entrega Expressa. O valor é o mesmo nas duas lojas?
+4. Abram o arquivo de testes na aba **Files changed**. Para cada teste, perguntem: o valor esperado vem da US-01 ou do código?
+
 ## Como revisar no GitHub
 
 1. Abra o PR e leia a descrição, na aba **Conversation**.
@@ -36,11 +54,11 @@ Os títulos começam com o número do grupo, por exemplo `[Grupo 3]`. As branche
 
 Para o resumo da revisão, use o modelo do `guia-revisao-prs.md`.
 
-## Como testar a loja de um PR
+## Como baixar a loja
 
-O GitHub não roda a loja. Para testar, baixe a branch e abra a loja no navegador:
+O GitHub não roda a loja. Para testar o PR 3, baixe a branch e abra a loja no navegador:
 
-1. Na página do PR, clique no nome da branch, por exemplo `g3-pr1`.
+1. Na página do PR, clique no nome da branch, por exemplo `g3-pr3`.
 2. Clique em **Code** e depois em **Download ZIP**.
 3. Descompacte e abra `loja/vitrine-loja.html` com dois cliques.
 
@@ -52,7 +70,7 @@ Para comparar, baixe também a branch `main` da mesma forma. A `main` é a loja 
 
 ## Antes de abrir o PR 2
 
-Antes de abrir o PR 2 do seu grupo, leiam só a situação e a regra abaixo. Respondam, sem código: como vocês resolveriam? O que vocês perguntariam ao PO? Três minutos.
+Antes de abrir o PR 2 do seu grupo, leiam só a situação e a regra abaixo. Respondam, sem código: como vocês resolveriam? O que vocês perguntariam ao PO?
 
 | Grupo | Situação | Regra da US-01 |
 |---|---|---|
