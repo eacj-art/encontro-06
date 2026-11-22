@@ -1,6 +1,6 @@
 # Laboratório 1 · Guia de revisão dos PRs
 
-**Em grupo · 35 minutos · entrega: uma revisão no GitHub para cada PR e os minutos no chat**
+**Em grupo · 35 minutos · entrega: uma revisão no GitHub para cada PR**
 
 O time Checkout da Vitrine abriu PRs. O código foi gerado com Claude Code. Vocês são o QA que revisa antes do merge.
 
@@ -30,27 +30,22 @@ A pergunta não é só "funciona?". A pergunta é: **o que este PR muda, e isso 
 
 ## Passo a passo
 
-1. Anotem a hora de início de cada PR.
-2. **Antes de abrir o PR 2**, façam o exercício do README: a situação, a regra e o que vocês perguntariam ao PO.
-3. Leiam a descrição do PR. O que o autor diz que mudou?
-4. Leiam a aba **Files changed**. O que mudou de fato? Bate com a descrição?
-5. **Só no PR 3:** baixem a `main` e a branch do PR 3 e façam os 5 testes do README nas duas lojas. Depois, leiam o arquivo de testes: o valor esperado vem da US-01 ou do código? Os PRs 1 e 2 são só leitura.
-6. Classifiquem cada achado:
+1. **Antes de abrir o PR 2**, façam o exercício do README: a situação, a regra e o que vocês perguntariam ao PO.
+2. Leiam a descrição do PR. O que o autor diz que mudou?
+3. Leiam a aba **Files changed**. O que mudou de fato? Bate com a descrição?
+4. **Só no PR 3:** baixem a `main` e a branch do PR 3 e façam os 5 testes do README nas duas lojas. Depois, leiam o arquivo de testes: o valor esperado vem da US-01 ou do código? Os PRs 1 e 2 são só leitura.
+5. Classifiquem cada achado:
    - **defeito:** contraria a US-01;
    - **lacuna decidida sem o PO:** a US-01 não define, e o PR decidiu;
    - **mudança não declarada:** o PR faz algo que a descrição não diz;
    - **teste fraco:** o teste não prova o que diz provar.
-7. Enviem a revisão no GitHub: **Approve**, **Request changes** ou **Comment**.
-8. Anotem a hora de fim. Comparem com o tempo de geração que está na descrição.
-9. O porta-voz posta os minutos no chat: `G3 · PR 1: 6 · PR 2: 12 · PR 3: 20`
+6. Enviem a revisão no GitHub: **Approve**, **Request changes** ou **Comment**.
 
 ## Modelo para o resumo da revisão
 
 Copiem no campo de **Review changes** e preencham:
 
 ```
-Tempo de revisão: __ min
-
 Achados:
 1. [defeito / lacuna decidida sem o PO / mudança não declarada / teste fraco] O que acontece. Como reproduzir.
 2. ...
