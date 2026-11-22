@@ -34,7 +34,7 @@ A pergunta não é só "funciona?". A pergunta é: **o que este PR muda, e isso 
 2. **Antes de abrir o PR 2**, façam o exercício do README: a situação, a regra e o que vocês perguntariam ao PO.
 3. Leiam a descrição do PR. O que o autor diz que mudou?
 4. Leiam a aba **Files changed**. O que mudou de fato? Bate com a descrição?
-5. Baixem a branch do PR e testem a loja ao lado da `main`, com a US-01 aberta.
+5. **Só no PR 3:** baixem a `main` e a branch do PR 3 e façam os 5 testes do README nas duas lojas. Depois, leiam o arquivo de testes: o valor esperado vem da US-01 ou do código? Os PRs 1 e 2 são só leitura.
 6. Classifiquem cada achado:
    - **defeito:** contraria a US-01;
    - **lacuna decidida sem o PO:** a US-01 não define, e o PR decidiu;
@@ -43,8 +43,6 @@ A pergunta não é só "funciona?". A pergunta é: **o que este PR muda, e isso 
 7. Enviem a revisão no GitHub: **Approve**, **Request changes** ou **Comment**.
 8. Anotem a hora de fim. Comparem com o tempo de geração que está na descrição.
 9. O porta-voz posta os minutos no chat: `G3 · PR 1: 6 · PR 2: 12 · PR 3: 20`
-
-Sugestão de tempo: 7 min no PR 1, 3 min antes do PR 2, 10 min no PR 2, 12 min no PR 3, 3 min para postar.
 
 ## Modelo para o resumo da revisão
 
