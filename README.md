@@ -83,12 +83,6 @@ Antes de abrir o PR 2 do seu grupo, leiam só a situação e a regra abaixo. Res
 
 Depois, abram o PR 2 e comparem o que vocês decidiram com o que a IA fez.
 
-## Quando terminar o laboratório 1
-
-O porta-voz posta os minutos de revisão no chat do Zoom, neste formato:
-
-`G3 · PR 1: 6 · PR 2: 12 · PR 3: 20`
-
 ## Laboratório 2
 
 Use os modelos desta pasta:
