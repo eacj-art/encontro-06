@@ -136,7 +136,7 @@ footer .wrap{padding-block:14px;display:flex;justify-content:space-between;gap:1
 </main>
 
 <footer>
-  <div class="wrap"><span>Vitrine · homologação · versão 2.4.0 (build 20/11/2026)</span><span>Loja fictícia para fins didáticos.</span></div>
+  <div class="wrap"><span>Vitrine · homologação · versão 2.4.0 + g6-pr2 (build do PR)</span><span>Loja fictícia para fins didáticos.</span></div>
 </footer>
 
 <script>
@@ -275,6 +275,7 @@ if (typeof module !== "undefined") module.exports = VitrineLogica;
     e.preventDefault();
     var r = L.validarCupom($("campo-cupom").value);
     if (!r.ok) { estado.cupom = null; mostrarMensagem(r.mensagem, "erro"); render(); return; }
+    if (!estado.frete) { mostrarMensagem("Escolha a entrega antes de aplicar o cupom.", "erro"); render(); return; }
     var anterior = estado.cupom;
     if (anterior && anterior !== r.codigo) { mostrarMensagem("Já existe um cupom aplicado. Remova o cupom atual para usar outro.", "erro"); render(); return; }
     estado.cupom = r.codigo;
