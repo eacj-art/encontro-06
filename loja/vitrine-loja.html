@@ -136,7 +136,7 @@ footer .wrap{padding-block:14px;display:flex;justify-content:space-between;gap:1
 </main>
 
 <footer>
-  <div class="wrap"><span>Vitrine · homologação · versão 2.4.0 (build 20/11/2026)</span><span>Loja fictícia para fins didáticos.</span></div>
+  <div class="wrap"><span>Vitrine · homologação · versão 2.4.0 + g5-pr2 (build do PR)</span><span>Loja fictícia para fins didáticos.</span></div>
 </footer>
 
 <script>
@@ -262,7 +262,17 @@ if (typeof module !== "undefined") module.exports = VitrineLogica;
     lab.innerHTML = '<input type="radio" name="frete" id="frete-' + f.id + '" value="' + f.id + '">' +
       '<span><b>' + f.nome + '</b><br><span class="prazo">' + f.prazo + '</span></span>' +
       '<span class="preco-frete">' + L.brl(f.valor) + '</span>';
-    lab.querySelector("input").addEventListener("change", function () { estado.frete = f.id; render(); });
+    lab.querySelector("input").addEventListener("change", function () {
+      var mudou = estado.frete !== null && estado.frete !== f.id;
+      estado.frete = f.id;
+      // R3 e R6: o desconto depende do pedido; se a entrega muda, o cupom precisa ser aplicado de novo
+      if (mudou && estado.cupom) {
+        var antes = estado.cupom;
+        estado.cupom = null;
+        mostrarMensagem("A entrega mudou. Aplique o cupom " + antes + " novamente.", "erro");
+      }
+      render();
+    });
     fs.appendChild(lab);
   });
 
